@@ -10,6 +10,9 @@
           1,
           1,
           null,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -17,11 +20,14 @@
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/lib/account.rb": {
         "lines": [
           1,
+          1,
+          1,
+          2,
           null,
           null
         ]
       }
     },
-    "timestamp": 1610366191
+    "timestamp": 1610366563
   }
 }
