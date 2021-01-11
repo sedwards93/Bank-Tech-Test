@@ -37,7 +37,7 @@ describe Account do
     it 'updates the transactions instance variable' do
       allow(Time).to receive(:new).and_return Time.new(2011,11,11)
       subject.withdraw(100)
-      expect(subject.transactions[0]).to eq(["11/11/2011", nil, "-100.00", "-100.00"])
+      expect(subject.transactions[0]).to eq(["11/11/2011", nil, "100.00", "-100.00"])
     end
   end
 
@@ -46,16 +46,12 @@ describe Account do
       expect(subject).to respond_to(:statement)
     end
     it 'prints out list of transactions' do
-      allow(Time).to receive(:new).and_return Time.new(2012,10,01)
+      allow(Time).to receive(:new).and_return Time.new(2011,11,11)
+      msg = "date || credit || debit || balance\n11/11/2011 ||  || 500.00 || 2500.00\n11/11/2011 || 2000.00 ||  || 3000.00\n11/11/2011 || 1000.00 ||  || 1000.00\n"
       subject.deposit(1000)
-      allow(Time).to receive(:new).and_return Time.new(2012,13,01)
       subject.deposit(2000)
-      allow(Time).to receive(:new).and_return Time.new(2012,14,01)
       subject.withdraw(500)
-      expect(subject.statement).to eq("date || credit || debit || balance\n
-                                       14/01/2012 || || 500.00 || 2500.00\n
-                                       13/01/2012 || 2000.00 || || 3000.00\n
-                                       10/01/2012 || 1000.00 || || 1000.00")
+      expect{subject.statement}.to output(msg).to_stdout
     end
   end
 end

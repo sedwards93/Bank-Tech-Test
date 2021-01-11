@@ -14,11 +14,16 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
-    transaction = [format_date, nil, format_money(-amount),format_money(balance)]
+    transaction = [format_date, nil, format_money(amount),format_money(balance)]
     transactions.unshift(transaction)
   end
 
   def statement
+    puts "date || credit || debit || balance"
+
+    transactions.each do |transaction|
+        puts "#{transaction[0]} || #{transaction[1]} || #{transaction[2]} || #{transaction[3]}\n"
+    end
   end
 
   private
