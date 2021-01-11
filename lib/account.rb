@@ -8,7 +8,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    transaction = [Date.new, amount, "", @balance]
+    transaction = [format_date, amount, "", @balance]
     transactions.push(transaction)
   end
 
@@ -18,6 +18,12 @@ class Account
   end
 
   def statement
+  end
+
+  private
+
+  def format_date
+    Time.new.strftime("%d/%m/%Y")
   end
 
 end
