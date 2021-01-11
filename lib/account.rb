@@ -9,13 +9,13 @@ class Account
   def deposit(amount)
     @balance += amount
     transaction = [format_date, format_money(amount),nil, format_money(balance)]
-    transactions.push(transaction)
+    transactions.unshift(transaction)
   end
 
   def withdraw(amount)
     @balance -= amount
     transaction = [format_date, nil, format_money(-amount),format_money(balance)]
-    transactions.push(transaction)
+    transactions.unshift(transaction)
   end
 
   def statement
