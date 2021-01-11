@@ -34,6 +34,11 @@ describe Account do
     it 'updates the account balance accordingly' do
       expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)
     end
+    it 'updates the transactions instance variable' do
+      allow(Time).to receive(:new).and_return Time.new(2011,11,11)
+      subject.withdraw(100)
+      expect(subject.transactions[0]).to eq(["11/11/2011", nil, "-100.00", "-100.00"])
+    end
   end
 
   describe '#Statement' do
