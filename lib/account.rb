@@ -14,7 +14,8 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
-    
+    transaction = [format_date, nil, format_money(-amount),format_money(balance)]
+    transactions.push(transaction)
   end
 
   def statement
