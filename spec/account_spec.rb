@@ -18,4 +18,10 @@ describe Account do
       expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)
     end
   end
+
+  describe '#Withdraw' do
+    it 'takes one argument of the amount that the user is withdrawing' do
+      expect(subject).to respond_to(:withdraw).with(1).argument
+    end
+  end
 end
