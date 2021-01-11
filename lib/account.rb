@@ -8,7 +8,8 @@ class Account
 
   def deposit(amount)
     @balance += amount
-
+    transaction = [Date.new, amount, "", @balance]
+    transactions.push(transaction)
   end
 
   def withdraw(amount)
