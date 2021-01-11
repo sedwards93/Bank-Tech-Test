@@ -1,7 +1,7 @@
 require 'transaction'
 
 describe Transaction do
-  let(:transaction) {Transaction.new(date: "30/12/1993", credit: nil, debit: nil, balance: 0 )}
+  let(:transaction) {Transaction.new(credit: 500, debit: nil, balance: 1000 )}
   describe '#Initialize' do
     it 'transaction is an instance of the Transaction class' do
       expect(subject).to be_an_instance_of(Transaction)
@@ -13,7 +13,15 @@ describe Transaction do
     it 'Instances of transaction class have a credit instance variable with default value of nil' do
       expect(subject.credit).to eq(nil)
     end
-    
+    it 'Instances of transaction class have a debit instance variable with default value of nil' do
+      expect(subject.debit).to eq(nil)
+    end
+    it 'Instances of transaction class have a balance instance variable with default value of nil' do
+      expect(subject.balance).to eq(nil)
+    end
+    it 'Figures are formatted correctly to show two decimal places' do
+      expect(transaction.balance).to eq("1000.00")
+    end
   end
   
 end

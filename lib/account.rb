@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require_relative 'transaction'
 class Account
   attr_reader :balance, :transactions
 
@@ -10,30 +10,21 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    transaction = [format_date, format_money(amount), nil, format_money(balance)]
+    transaction = Transaction.new(debit: amount, balance: balance)
     transactions.unshift(transaction)
   end
 
   def withdraw(amount)
     @balance -= amount
-    transaction = [format_date, nil, format_money(amount), format_money(balance)]
+    transaction = Transaction.new(credit: amount, balance: balance)
     transactions.unshift(transaction)
   end
 
   def statement
     puts 'date || credit || debit || balance'
     transactions.each do |transaction|
-      puts "#{transaction[0]} || #{transaction[1]} || #{transaction[2]} || #{transaction[3]}\n"
+      puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}\n"
     end
   end
 
-  private
-
-  def format_date
-    Time.new.strftime('%d/%m/%Y')
-  end
-
-  def format_money(amount)
-    '%.2f' % amount
-  end
 end
