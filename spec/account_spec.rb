@@ -27,4 +27,10 @@ describe Account do
       expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)
     end
   end
+
+  describe '#Statement' do
+    it 'statement method takes no arguemnts' do
+      expect(subject).to respond_to(:statement)
+    end
+  end
 end

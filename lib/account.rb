@@ -13,4 +13,7 @@ class Account
     @balance -= amount
   end
 
+  def statement
+  end
+
 end
