@@ -3,9 +3,12 @@
     "coverage": {
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/spec/account_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
+          null,
           1,
           1,
           1,
@@ -59,11 +62,14 @@
           2,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/lib/account.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -86,7 +92,6 @@
           null,
           1,
           1,
-          null,
           1,
           3,
           null,
@@ -101,11 +106,31 @@
           1,
           14,
           null,
+          null
+        ]
+      },
+      "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/spec/transaction_spec.rb": {
+        "lines": [
+          1,
           null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/lib/transaction.rb": {
+        "lines": [
+          1,
           null
         ]
       }
     },
-    "timestamp": 1610375593
+    "timestamp": 1610376776
   }
 }

@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'account'
 
 describe Account do
+
   describe '#Initialize' do
     it 'account is an instance of the Account class' do
       expect(subject).to be_an_instance_of(Account)
@@ -21,9 +24,9 @@ describe Account do
       expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)
     end
     it 'updates the transactions instance variable' do
-      allow(Time).to receive(:new).and_return Time.new(2011,11,11)
+      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)
       subject.deposit(100)
-      expect(subject.transactions[0]).to eq(["11/11/2011", "100.00", nil, "100.00"])
+      expect(subject.transactions[0]).to eq(['11/11/2011', '100.00', nil, '100.00'])
     end
   end
 
@@ -35,9 +38,9 @@ describe Account do
       expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)
     end
     it 'updates the transactions instance variable' do
-      allow(Time).to receive(:new).and_return Time.new(2011,11,11)
+      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)
       subject.withdraw(100)
-      expect(subject.transactions[0]).to eq(["11/11/2011", nil, "100.00", "-100.00"])
+      expect(subject.transactions[0]).to eq(['11/11/2011', nil, '100.00', '-100.00'])
     end
   end
 
@@ -46,12 +49,13 @@ describe Account do
       expect(subject).to respond_to(:statement)
     end
     it 'prints out list of transactions' do
-      allow(Time).to receive(:new).and_return Time.new(2011,11,11)
+      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)
       msg = "date || credit || debit || balance\n11/11/2011 ||  || 500.00 || 2500.00\n11/11/2011 || 2000.00 ||  || 3000.00\n11/11/2011 || 1000.00 ||  || 1000.00\n"
       subject.deposit(1000)
       subject.deposit(2000)
       subject.withdraw(500)
-      expect{subject.statement}.to output(msg).to_stdout
+      expect { subject.statement }.to output(msg).to_stdout
     end
   end
+  
 end
