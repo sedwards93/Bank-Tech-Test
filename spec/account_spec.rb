@@ -21,32 +21,45 @@ describe Account do
     end
   end
 
-  describe '#Deposit' do
-    it 'takes one argument of the amount that the user is depositing' do
-      expect(account).to respond_to(:deposit).with(1).argument
-    end
-    it 'updates the acccount balance accordingly' do
-      expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)
-    end
-    it 'updates the transactions instance variable' do
-      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)
-      subject.deposit(100)
-      expect(subject.transactions[0]).to eq(['11/11/2011', '100.00', nil, '100.00'])
-    end
-  end
+  describe '#Deposit & #Withdrawal' do
 
-  describe '#Withdraw' do
-    it 'takes one argument of the amount that the user is withdrawing' do
-      expect(subject).to respond_to(:withdraw).with(1).argument
+    before do
+      allow(transaction).to receive(:new)
     end
-    it 'updates the account balance accordingly' do
-      expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)
+
+    describe '#Deposit' do
+
+      it 'takes one argument of the amount that the user is depositing' do
+        expect(account).to respond_to(:deposit).with(1).argument
+      end
+      it 'updates the acccount balance accordingly' do
+        expect { account.deposit(100) }.to change { account.balance }.from(0).to(100)
+      end
+      it 'updates the transactions instance variable' do
+        expect{account.deposit(100)}.to change { account.transactions.length}.by(1)
+      end
+      it 'creates a new transaction' do
+        expect(transaction).to receive(:new).with({:balance=>100, :debit=>100})
+        account.deposit(100)
+      end
     end
-    it 'updates the transactions instance variable' do
-      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)
-      subject.withdraw(100)
-      expect(subject.transactions[0]).to eq(['11/11/2011', nil, '100.00', '-100.00'])
+
+    describe '#Withdraw' do
+      it 'takes one argument of the amount that the user is withdrawing' do
+        expect(account).to respond_to(:withdraw).with(1).argument
+      end
+      it 'updates the account balance accordingly' do
+        expect { account.withdraw(100) }.to change { account.balance }.from(0).to(-100)
+      end
+      it 'updates the transactions instance variable' do
+        expect{account.withdraw(100)}.to change { account.transactions.length}.by(1)
+      end
+      it 'creates a new transaction' do
+        expect(transaction).to receive(:new).with({:balance=>-100, :credit=>100})
+        account.withdraw(100)
+      end
     end
+
   end
 
   describe '#Statement' do
