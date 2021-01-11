@@ -23,5 +23,8 @@ describe Account do
     it 'takes one argument of the amount that the user is withdrawing' do
       expect(subject).to respond_to(:withdraw).with(1).argument
     end
+    it 'updates the account balance accordingly' do
+      expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)
+    end
   end
 end
