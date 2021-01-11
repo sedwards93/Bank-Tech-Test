@@ -8,6 +8,9 @@ describe Account do
     it 'instances of the Account class are initialized with a balance of 0' do
       expect(subject.balance).to eq(0)
     end
+    it 'instances of the Account class are initialized with a transactions property of an empty array' do
+      expect(subject.transactions).to be_an_instance_of(Array)
+    end
   end
 
   describe '#Deposit' do
