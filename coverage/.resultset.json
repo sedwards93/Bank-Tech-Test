@@ -1,0 +1,27 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/spec/account_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/lib/account.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1610366191
+  }
+}
