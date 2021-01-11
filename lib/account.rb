@@ -3,7 +3,7 @@ require_relative 'transaction'
 class Account
   attr_reader :balance, :transactions, :transaction
 
-  def initialize(transaction = Transaction)
+  def initialize(transaction: Transaction)
     @balance = 0
     @transactions = []
     @transaction = transaction
@@ -24,6 +24,7 @@ class Account
     transactions.each do |transaction|
       puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}\n"
     end
+    return
   end
 
 end
