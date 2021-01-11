@@ -22,7 +22,7 @@ describe Account do
     end
     it 'updates the transactions instance variable' do
       subject.deposit(100)
-      expect(subject.transactions[0]).to eq("11/01/2021,100.00, , 100.00")
+      expect(subject.transactions[0]).to eq(["11/01/2021", "100.00", nil, "100.00"])
     end
   end
 
