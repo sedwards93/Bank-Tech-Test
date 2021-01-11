@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-11T15:40:00+00:00">2021-01-11T15:40:00+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-01-11T16:25:33+00:00">2021-01-11T16:25:33+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.6
+         2.75
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>82</b> relevant lines,
-    <span class="green"><b>82</b> lines covered</span> and
+    <b>85</b> relevant lines,
+    <span class="green"><b>85</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9198c5c441c28e55d8ba7b047eedbefe60b34221" class="src_link" title="lib/account.rb">lib/account.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">30</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">18</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">3.06</td>
+            <td class="cell--number">3.65</td>
             
           </tr>
         
@@ -95,11 +95,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#517e6a7b8d28b9922c5a3f2c7daa389c70a24c7d" class="src_link" title="spec/account_spec.rb">spec/account_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">61</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">37</td>
+            <td class="cell--number">66</td>
+            <td class="cell--number">41</td>
+            <td class="cell--number">41</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.19</td>
+            <td class="cell--number">1.41</td>
             
           </tr>
         
@@ -145,8 +145,8 @@
     
 
     <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>17</b> relevant lines.
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -197,7 +197,7 @@
 
             
 
-            <code class="ruby">  attr_reader :balance, :transactions</code>
+            <code class="ruby">  attr_reader :balance, :transactions, :transaction</code>
           </li>
         </div>
       
@@ -219,13 +219,13 @@
 
             
 
-            <code class="ruby">  def initialize</code>
+            <code class="ruby">  def initialize(transaction = Transaction)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="7">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="7">
+            <span class="hits">12</span>
             
 
             
@@ -235,8 +235,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="8">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="12" data-linenumber="8">
+            <span class="hits">12</span>
             
 
             
@@ -246,13 +246,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
+          <li class="covered" data-hits="12" data-linenumber="9">
+            <span class="hits">12</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @transaction = transaction</code>
           </li>
         </div>
       
@@ -263,12 +263,23 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="12">
             <span class="hits">1</span>
             
 
@@ -279,7 +290,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="12">
+          <li class="covered" data-hits="4" data-linenumber="13">
             <span class="hits">4</span>
             
 
@@ -290,24 +301,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="13">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    transaction = Transaction.new(debit: amount, balance: balance)</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="covered" data-hits="4" data-linenumber="14">
             <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">    transactions.unshift(transaction)</code>
+            <code class="ruby">    transactions.unshift(transaction.new(debit: amount, balance: balance))</code>
           </li>
         </div>
       
@@ -362,18 +362,18 @@
 
             
 
-            <code class="ruby">    transaction = Transaction.new(credit: amount, balance: balance)</code>
+            <code class="ruby">    transactions.unshift(transaction.new(credit: amount, balance: balance))</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="20">
-            <span class="hits">3</span>
+          <li class="never" data-hits="" data-linenumber="20">
+            
             
 
             
 
-            <code class="ruby">    transactions.unshift(transaction)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -384,23 +384,12 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="22">
             <span class="hits">1</span>
             
 
@@ -411,7 +400,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
+          <li class="covered" data-hits="1" data-linenumber="23">
             <span class="hits">1</span>
             
 
@@ -422,7 +411,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
+          <li class="covered" data-hits="1" data-linenumber="24">
             <span class="hits">1</span>
             
 
@@ -433,7 +422,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="26">
+          <li class="covered" data-hits="3" data-linenumber="25">
             <span class="hits">3</span>
             
 
@@ -444,7 +433,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -455,7 +444,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
@@ -466,7 +455,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -477,7 +466,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -724,8 +713,8 @@
     
 
     <div class="t-line-summary">
-      <b>37</b> relevant lines.
-      <span class="green"><b>37</b> lines covered</span> and
+      <b>41</b> relevant lines.
+      <span class="green"><b>41</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -792,35 +781,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="covered" data-hits="6" data-linenumber="6">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">  let(:transaction) { double :transaction }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="7">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">  let(:account) { Account.new(transaction)}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  describe &#39;#Initialize&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;account is an instance of the Account class&#39; do</code>
           </li>
         </div>
       
@@ -831,18 +820,18 @@
 
             
 
-            <code class="ruby">      expect(subject).to be_an_instance_of(Account)</code>
+            <code class="ruby">  describe &#39;#Initialize&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    it &#39;account is an instance of the Account class&#39; do</code>
           </li>
         </div>
       
@@ -853,29 +842,29 @@
 
             
 
-            <code class="ruby">    it &#39;instances of the Account class are initialized with a balance of 0&#39; do</code>
+            <code class="ruby">      expect(account).to be_an_instance_of(Account)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(subject.balance).to eq(0)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
             
 
             <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;instances of the Account class are initialized with a balance of 0&#39; do</code>
           </li>
         </div>
       
@@ -886,23 +875,12 @@
 
             
 
-            <code class="ruby">    it &#39;instances of the Account class are initialized with a transactions property of an empty array&#39; do</code>
+            <code class="ruby">      expect(account.balance).to eq(0)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(subject.transactions).to be_an_instance_of(Array)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -913,13 +891,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
             
+
+            
+
+            <code class="ruby">    it &#39;instances of the Account class are initialized with a transactions property of an empty array&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      expect(account.transactions).to be_an_instance_of(Array)</code>
           </li>
         </div>
       
@@ -930,7 +919,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -941,7 +930,7 @@
 
             
 
-            <code class="ruby">  describe &#39;#Deposit&#39; do</code>
+            <code class="ruby">    it &#39;instances of the Account class are initialized with a Transaction class&#39; do</code>
           </li>
         </div>
       
@@ -952,18 +941,18 @@
 
             
 
-            <code class="ruby">    it &#39;takes one argument of the amount that the user is depositing&#39; do</code>
+            <code class="ruby">      expect(account).to respond_to(:transaction)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="21">
+            
             
 
             
 
-            <code class="ruby">      expect(subject).to respond_to(:deposit).with(1).argument</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -974,40 +963,40 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    it &#39;updates the acccount balance accordingly&#39; do</code>
+            <code class="ruby">  describe &#39;#Deposit&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="24">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
+            <code class="ruby">    it &#39;takes one argument of the amount that the user is depositing&#39; do</code>
           </li>
         </div>
       
@@ -1018,18 +1007,18 @@
 
             
 
-            <code class="ruby">    it &#39;updates the transactions instance variable&#39; do</code>
+            <code class="ruby">      expect(account).to respond_to(:deposit).with(1).argument</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="27">
+            
             
 
             
 
-            <code class="ruby">      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1040,18 +1029,18 @@
 
             
 
-            <code class="ruby">      subject.deposit(100)</code>
+            <code class="ruby">    it &#39;updates the acccount balance accordingly&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="4" data-linenumber="29">
+            <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">      expect(subject.transactions[0]).to eq([&#39;11/11/2011&#39;, &#39;100.00&#39;, nil, &#39;100.00&#39;])</code>
+            <code class="ruby">      expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)</code>
           </li>
         </div>
       
@@ -1067,106 +1056,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="32">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="33">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  describe &#39;#Withdraw&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="34">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;takes one argument of the amount that the user is withdrawing&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(subject).to respond_to(:withdraw).with(1).argument</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="36">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="37">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;updates the account balance accordingly&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="38">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">      expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
+          <li class="covered" data-hits="1" data-linenumber="31">
             <span class="hits">1</span>
             
 
@@ -1177,7 +1067,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
@@ -1188,24 +1078,123 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      subject.deposit(100)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="34">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(subject.transactions[0]).to eq([&#39;11/11/2011&#39;, &#39;100.00&#39;, nil, &#39;100.00&#39;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;#Withdraw&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;takes one argument of the amount that the user is withdrawing&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(subject).to respond_to(:withdraw).with(1).argument</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="42">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      subject.withdraw(100)</code>
+            <code class="ruby">    it &#39;updates the account balance accordingly&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="43">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="4" data-linenumber="43">
+            <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">      expect(subject.transactions[0]).to eq([&#39;11/11/2011&#39;, nil, &#39;100.00&#39;, &#39;-100.00&#39;])</code>
+            <code class="ruby">      expect { subject.withdraw(100) }.to change { subject.balance }.from(0).to(-100)</code>
           </li>
         </div>
       
@@ -1221,84 +1210,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="46">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
+          <li class="covered" data-hits="1" data-linenumber="45">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  describe &#39;#Statement&#39; do</code>
+            <code class="ruby">    it &#39;updates the transactions instance variable&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="48">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;statement method takes no arguemnts&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="49">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(subject).to respond_to(:statement)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;prints out list of transactions&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="52">
+          <li class="covered" data-hits="1" data-linenumber="46">
             <span class="hits">1</span>
             
 
@@ -1309,62 +1232,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
+          <li class="covered" data-hits="1" data-linenumber="47">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      msg = &quot;date || credit || debit || balance\n11/11/2011 || 500.00 ||  || 2500.00\n11/11/2011 ||  || 2000.00 || 3000.00\n11/11/2011 ||  || 1000.00 || 1000.00\n&quot;</code>
+            <code class="ruby">      subject.withdraw(100)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      subject.deposit(1000)</code>
+            <code class="ruby">      expect(subject.transactions[0]).to eq([&#39;11/11/2011&#39;, nil, &#39;100.00&#39;, &#39;-100.00&#39;])</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      subject.deposit(2000)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="56">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      subject.withdraw(500)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="57">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      expect { subject.statement }.to output(msg).to_stdout</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -1375,7 +1265,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -1386,7 +1276,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
@@ -1397,7 +1287,161 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;#Statement&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;statement method takes no arguemnts&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(subject).to respond_to(:statement)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;prints out list of transactions&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="57">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="58">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      msg = &quot;date || credit || debit || balance\n11/11/2011 || 500.00 ||  || 2500.00\n11/11/2011 ||  || 2000.00 || 3000.00\n11/11/2011 ||  || 1000.00 || 1000.00\n&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="59">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      subject.deposit(1000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      subject.deposit(2000)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      subject.withdraw(500)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="62">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      expect { subject.statement }.to output(msg).to_stdout</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 

@@ -3,22 +3,27 @@
 require 'account'
 
 describe Account do
+  let(:transaction) { double :transaction }
+  let(:account) { Account.new(transaction)}
 
   describe '#Initialize' do
     it 'account is an instance of the Account class' do
-      expect(subject).to be_an_instance_of(Account)
+      expect(account).to be_an_instance_of(Account)
     end
     it 'instances of the Account class are initialized with a balance of 0' do
-      expect(subject.balance).to eq(0)
+      expect(account.balance).to eq(0)
     end
     it 'instances of the Account class are initialized with a transactions property of an empty array' do
-      expect(subject.transactions).to be_an_instance_of(Array)
+      expect(account.transactions).to be_an_instance_of(Array)
+    end
+    it 'instances of the Account class are initialized with a Transaction class' do
+      expect(account).to respond_to(:transaction)
     end
   end
 
   describe '#Deposit' do
     it 'takes one argument of the amount that the user is depositing' do
-      expect(subject).to respond_to(:deposit).with(1).argument
+      expect(account).to respond_to(:deposit).with(1).argument
     end
     it 'updates the acccount balance accordingly' do
       expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)
