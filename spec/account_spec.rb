@@ -21,8 +21,9 @@ describe Account do
       expect { subject.deposit(100) }.to change { subject.balance }.from(0).to(100)
     end
     it 'updates the transactions instance variable' do
+      allow(Time).to receive(:new).and_return Time.new(2011,11,11)
       subject.deposit(100)
-      expect(subject.transactions[0]).to eq(["11/01/2021", "100.00", nil, "100.00"])
+      expect(subject.transactions[0]).to eq(["11/11/2011", "100.00", nil, "100.00"])
     end
   end
 
