@@ -6,7 +6,8 @@ describe 'Example transaction history' do
     
     context 'Multi-transaction statement' do
       it 'Prints the correct message to the st_out' do
-        msg = "date || credit || debit || balance\n11/01/2021 || 500.00 ||  || 2500.00\n11/01/2021 ||  || 2000.00 || 3000.00\n11/01/2021 ||  || 1000.00 || 1000.00\n"
+        allow(Time).to receive(:new).and_return Time.new(2011, 11, 11)
+        msg = "date || credit || debit || balance\n11/11/2011 || 500.00 ||  || 2500.00\n11/11/2011 ||  || 2000.00 || 3000.00\n11/11/2011 ||  || 1000.00 || 1000.00\n"
         account.deposit(1000)
         account.deposit(2000)
         account.withdraw(500)

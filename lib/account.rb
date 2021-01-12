@@ -20,11 +20,17 @@ class Account
   end
 
   def statement
-    puts 'date || credit || debit || balance'
+    statement_header
     transactions.each do |transaction|
       puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}\n"
     end
     return
+  end
+
+  private
+
+  def statement_header
+    puts 'date || credit || debit || balance'
   end
 
 end
