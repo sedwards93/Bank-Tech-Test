@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'transaction'
 class Account
   attr_reader :balance, :transactions, :transaction
@@ -24,7 +25,7 @@ class Account
     transactions.each do |transaction|
       puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}\n"
     end
-    return
+    nil
   end
 
   private
@@ -32,5 +33,4 @@ class Account
   def statement_header
     puts 'date || credit || debit || balance'
   end
-
 end

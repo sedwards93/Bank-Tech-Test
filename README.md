@@ -1,16 +1,73 @@
-# Bank tech test
+# 🏦 Bank tech test 🐖
 
-Today, you'll practice doing a tech test.
+This is my submission for the Bank tech test, completed as part of Makers Academy's tech test week. I chose to write the code in Ruby, using RSPEC to test drive my code. My code has 100% test coverage according to the SimpleCov gem. 
 
-For most tech tests, you'll essentially have unlimited time. This practice session is about producing the best code you can when there is a minimal time pressure.
+I started by extracting several user stories, which I used to a class diagram. I initially completed the exercise using only one class, but I later extracted functionality to a transaction class, which is visualised in the second class diagram below. 
 
-You'll get to practice your OO design and TDD skills.
+## User Stories
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+    As a user
+    So that I can keep my money safe
+    I would like to be able to deposit money in my bank account.
+    
+    As a user
+    So that I can spend my money
+    I would like to be able to withdraw money from my bank account.
+
+    As a user
+    So that I can keep tabs on my money
+    I would like to be able to view a bank statement.
+    
+    As a user
+    So that I can keep tabs on my money
+    I would like to be able to see transaction dates on my bank statements.
+    
+    As a user
+    So that I can keep tabs on my money
+    I would like to be able to see transaction amounts on my bank statements.
+    
+    As a user
+    So that I can keep tabs on my money
+    I would like to be able to see my current balance on my bank statement.
+
+## Class Diagrams
+![One Class](public/BankClassDiagram.png)
+![Two Classes](public/BankClassDiagram2.png)
+
+### Setup and Code Example:
+Setup:
+Fork this repository 
+
+Clone the repository and follow below:
+
+      > bundle install
+      > rspec
+      > cd lib
+      > irb
+Example:
+
+       $ irb
+
+       2.7.0 :001 > require './account.rb'
+         => true 
+
+       2.7.0 :002 > a = Account.new
+         => #<Account:0x00007f9b87b5a160 @balance=0, @transactions=[],  @transaction=Transaction> 
+
+       2.7.0 :003 > a.deposit(1000)
+          => [#<Transaction:0x00007f9b8a1f6788 @date="12/01/2021", @credit=nil, @debit="1000.00", @balance="1000.00">] 
+
+       2.7.0 :004 > a.withdraw(160)
+         => [#<Transaction:0x00007f9b87b13300 @date="12/01/2021", @credit="160.00", @debit=nil, @balance="840.00">, #<Transaction:0x00007f9b8a1f6788 @date="12/01/2021", @credit=nil, @debit="1000.00", @balance="1000.00">] 
+
+       2.7.0 :005 > a.statement
+         date || credit || debit || balance
+         12/01/2021 || 160.00 ||  || 840.00
+         12/01/2021 ||  || 1000.00 || 1000.00
+         => nil 
+
 
 ## Specification
-
-### Requirements
 
 -   You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
     
@@ -40,36 +97,6 @@ Then she would see
     13/01/2012 || 2000.00 || || 3000.00
     
     10/01/2012 || 1000.00 || || 1000.00
-
-  
-
-### Extracted User Stories
-
-    As a user
-    So that I can keep my money safe
-    I would like to be able to deposit money in my bank account.
-    
-    As a user
-    So that I can spend my money
-    I would like to be able to withdraw money from my bank account.
-
-    As a user
-    So that I can keep tabs on my money
-    I would like to be able to view a bank statement.
-    
-    As a user
-    So that I can keep tabs on my money
-    I would like to be able to see transaction dates on my bank statements.
-    
-    As a user
-    So that I can keep tabs on my money
-    I would like to be able to see transaction amounts on my bank statements.
-    
-    As a user
-    So that I can keep tabs on my money
-    I would like to be able to see my current balance on my bank statement.
-
-  
 
 ### Self-assessment
 

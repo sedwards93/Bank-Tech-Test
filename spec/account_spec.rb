@@ -3,10 +3,8 @@
 require 'account'
 
 describe Account do
-  
   let(:transaction) { double :transaction }
-  let(:account) { Account.new(transaction: transaction)}
-
+  let(:account) { Account.new(transaction: transaction) }
 
   describe '#Initialize' do
     it 'account is an instance of the Account class' do
@@ -24,13 +22,11 @@ describe Account do
   end
 
   describe '#Deposit & #Withdrawal' do
-
     before do
       allow(transaction).to receive(:new)
     end
 
     describe '#Deposit' do
-
       it 'takes one argument of the amount that the user is depositing' do
         expect(account).to respond_to(:deposit).with(1).argument
       end
@@ -38,10 +34,10 @@ describe Account do
         expect { account.deposit(100) }.to change { account.balance }.from(0).to(100)
       end
       it 'updates the transactions instance variable' do
-        expect{account.deposit(100)}.to change { account.transactions.length}.by(1)
+        expect { account.deposit(100) }.to change { account.transactions.length }.by(1)
       end
       it 'creates a new transaction' do
-        expect(transaction).to receive(:new).with({:balance=>100, :debit=>100})
+        expect(transaction).to receive(:new).with({ balance: 100, debit: 100 })
         account.deposit(100)
       end
     end
@@ -54,10 +50,10 @@ describe Account do
         expect { account.withdraw(100) }.to change { account.balance }.from(0).to(-100)
       end
       it 'updates the transactions instance variable' do
-        expect{account.withdraw(100)}.to change { account.transactions.length}.by(1)
+        expect { account.withdraw(100) }.to change { account.transactions.length }.by(1)
       end
       it 'creates a new transaction' do
-        expect(transaction).to receive(:new).with({:balance=>-100, :credit=>100})
+        expect(transaction).to receive(:new).with({ balance: -100, credit: 100 })
         account.withdraw(100)
       end
     end
@@ -71,7 +67,5 @@ describe Account do
         expect { account.statement }.to output(msg).to_stdout
       end
     end
-
   end
-
 end

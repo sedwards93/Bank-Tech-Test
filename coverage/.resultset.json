@@ -8,11 +8,9 @@
           1,
           null,
           1,
-          null,
           15,
           15,
           null,
-          null,
           1,
           1,
           1,
@@ -29,13 +27,11 @@
           null,
           null,
           1,
-          null,
           1,
           10,
           null,
           null,
           1,
-          null,
           1,
           1,
           null,
@@ -77,13 +73,12 @@
           null,
           null,
           null,
-          null,
-          null,
           null
         ]
       },
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/lib/account.rb": {
         "lines": [
+          null,
           null,
           1,
           1,
@@ -118,20 +113,21 @@
           1,
           2,
           null,
-          null,
           null
         ]
       },
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/lib/transaction.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          9,
-          9,
-          9,
-          9,
           null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          9,
+          9,
+          9,
+          9,
           null,
           null,
           1,
@@ -143,12 +139,13 @@
           1,
           9,
           null,
-          null,
           null
         ]
       },
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/spec/feature_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -159,11 +156,11 @@
           1,
           1,
           1,
+          null,
           1,
           1,
           1,
           2,
-          null,
           null,
           null,
           null
@@ -171,6 +168,8 @@
       },
       "/Users/symionedwards/Projects/Tech_tests/Bank_tech_test/spec/transaction_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -196,11 +195,10 @@
           1,
           null,
           null,
-          null,
           null
         ]
       }
     },
-    "timestamp": 1610440184
+    "timestamp": 1610443815
   }
 }
