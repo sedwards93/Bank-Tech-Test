@@ -12,17 +12,17 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    transactions.unshift(transaction.new(debit: amount, balance: balance))
+    transactions.push(transaction.new(debit: amount, balance: balance))
   end
 
   def withdraw(amount)
     @balance -= amount
-    transactions.unshift(transaction.new(credit: amount, balance: balance))
+    transactions.push(transaction.new(credit: amount, balance: balance))
   end
 
   def statement
     statement_header
-    transactions.each do |transaction|
+    transactions.reverse_each do |transaction|
       puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}\n"
     end
     nil
