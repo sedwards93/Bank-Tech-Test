@@ -4,7 +4,8 @@ require 'account'
 
 describe Account do
   let(:transaction) { double :transaction }
-  let(:account) { Account.new(transaction: transaction) }
+  let(:statement) { double :statement }
+  let(:account) { Account.new(transaction: transaction, statement: statement) }
 
   describe '#Initialize' do
     it 'account is an instance of the Account class' do
@@ -58,13 +59,13 @@ describe Account do
       end
     end
 
-    describe '#Statement' do
-      it 'statement method takes no arguemnts' do
+    describe '#View_statement' do
+      it 'view_statement method takes no arguemnts' do
         expect(account).to respond_to(:view_statement)
       end
-      it 'prints out list of transactions' do
-        msg = "date || credit || debit || balance\n"
-        expect { account.view_statement }.to output(msg).to_stdout
+      it 'Calls on new instance of the statement class' do
+        expect(statement).to receive(:print)
+        account.view_statement
       end
     end
   end

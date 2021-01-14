@@ -5,7 +5,7 @@ require_relative 'statement'
 class Account
   attr_reader :balance, :transactions, :transaction, :statement
 
-  def initialize(transaction: Transaction, statement: Statement)
+  def initialize(transaction: Transaction, statement: Statement.new)
     @balance = 0
     @transactions = []
     @transaction = transaction
@@ -23,6 +23,6 @@ class Account
   end
 
   def view_statement
-    statement.new(transactions).print
+    statement.print(transactions)
   end
 end
