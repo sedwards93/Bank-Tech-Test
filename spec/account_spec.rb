@@ -34,9 +34,6 @@ describe Account do
       it 'updates the acccount balance accordingly' do
         expect { account.deposit(100) }.to change { account.balance }.from(0).to(100)
       end
-      it 'updates the transactions instance variable' do
-        expect { account.deposit(100) }.to change { account.transactions.length }.by(1)
-      end
       it 'creates a new transaction' do
         expect(transaction).to receive(:new).with({ balance: 100, debit: 100 })
         account.deposit(100)
@@ -49,9 +46,6 @@ describe Account do
       end
       it 'updates the account balance accordingly' do
         expect { account.withdraw(100) }.to change { account.balance }.from(0).to(-100)
-      end
-      it 'updates the transactions instance variable' do
-        expect { account.withdraw(100) }.to change { account.transactions.length }.by(1)
       end
       it 'creates a new transaction' do
         expect(transaction).to receive(:new).with({ balance: -100, credit: 100 })

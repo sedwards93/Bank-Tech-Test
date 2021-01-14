@@ -2,10 +2,7 @@
 
 This is my submission for the Bank tech test, completed as part of Makers Academy's tech test week. I chose to write the code in Ruby, using RSPEC to test drive my code. My code has 100% test coverage according to the SimpleCov gem. 
 
-I started by extracting several user stories, which I used to a class diagram. I initially completed the exercise using only one class, but I later extracted functionality to a transaction class, which is visualised in the second class diagram below. 
-
-## Additional Amendments
-I further split the account class to extract a statement class. This allowed me to attain 100% test coverage without the aid of a feature test.
+I started by extracting several user stories, which I used to a class diagram. I initially completed the exercise using only one class, but I later extracted functionality to a transaction class and a statement class, which is visualied in the class diagrams below. 
 
 ## User Stories
 
@@ -36,6 +33,7 @@ I further split the account class to extract a statement class. This allowed me 
 ## Class Diagrams
 ![One Class](public/BankClassDiagram.png)
 ![Two Classes](public/BankClassDiagram2.png)
+![Three Classes](public/BankClassDiagram3.png)
 
 ### Setup and Code Example:
 Setup:
@@ -45,9 +43,10 @@ Clone the repository and follow below:
 
       > bundle install
       > rspec
+![Test Coverage](public/Bank_test_coverage.png)
+
       > cd lib
       > irb
-Example:
 
        $ irb
 
