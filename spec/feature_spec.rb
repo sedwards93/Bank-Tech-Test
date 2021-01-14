@@ -14,7 +14,7 @@ describe 'Example transaction history' do
       account.deposit(1000)
       account.deposit(2000)
       account.withdraw(500)
-      expect { account.statement }.to output(msg).to_stdout
+      expect { account.view_statement }.to output(msg).to_stdout
     end
   end
 end

@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 require_relative 'transaction'
+require_relative 'statement'
 class Account
-  attr_reader :balance, :transactions, :transaction
+  attr_reader :balance, :transactions, :transaction, :statement
 
-  def initialize(transaction: Transaction)
+  def initialize(transaction: Transaction, statement: Statement)
     @balance = 0
     @transactions = []
     @transaction = transaction
+    @statement = statement
   end
 
   def deposit(amount)
@@ -20,17 +22,8 @@ class Account
     transactions.push(transaction.new(credit: amount, balance: balance))
   end
 
-  def statement
-    statement_header
-    transactions.reverse_each do |transaction|
-      puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}\n"
-    end
-    nil
+  def view_statement
+    statement.new(transactions).print
   end
 
-  private
-
-  def statement_header
-    puts 'date || credit || debit || balance'
-  end
 end

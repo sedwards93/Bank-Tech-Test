@@ -60,11 +60,11 @@ describe Account do
 
     describe '#Statement' do
       it 'statement method takes no arguemnts' do
-        expect(account).to respond_to(:statement)
+        expect(account).to respond_to(:view_statement)
       end
       it 'prints out list of transactions' do
         msg = "date || credit || debit || balance\n"
-        expect { account.statement }.to output(msg).to_stdout
+        expect { account.view_statement }.to output(msg).to_stdout
       end
     end
   end
