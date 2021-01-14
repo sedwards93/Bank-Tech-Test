@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Statement
   attr_reader :transactions
 
@@ -18,5 +20,4 @@ class Statement
   def statement_header
     puts 'date || credit || debit || balance'
   end
-
 end

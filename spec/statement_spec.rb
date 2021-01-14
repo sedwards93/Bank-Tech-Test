@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'statement'
 
 describe Statement do
-  let(:transaction) { double :transaction, date: "11/11/2011", credit: nil, debit: 500, balance: 1000 }
-  let(:transaction2) { double :transaction2, date: "12/11/2011", credit: 100, debit: nil, balance: 900 }
+  let(:transaction) { double :transaction, date: '11/11/2011', credit: nil, debit: 500, balance: 1000 }
+  let(:transaction2) { double :transaction2, date: '12/11/2011', credit: 100, debit: nil, balance: 900 }
   let(:statement) { Statement.new([transaction, transaction2]) }
 
   describe '#Initialize' do
@@ -28,7 +30,6 @@ describe Statement do
     end
   end
 end
-
 
 # class Statement
 #   attr_reader :transactions
