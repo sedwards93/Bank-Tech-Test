@@ -4,6 +4,9 @@ This is my submission for the Bank tech test, completed as part of Makers Academ
 
 I started by extracting several user stories, which I used to a class diagram. I initially completed the exercise using only one class, but I later extracted functionality to a transaction class, which is visualised in the second class diagram below. 
 
+## Additional Amendments
+I further split the account class to extract a statement class. This allowed me to attain 100% test coverage without the aid of a feature test.
+
 ## User Stories
 
     As a user
